@@ -1,0 +1,70 @@
+:root{--creme:#f8f1e4;--rosa:#b8325a;--rosa2:#8f2145;--texto:#4a2c2f;--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:Lato,system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--creme);color:var(--texto);font:400 1.0625rem/1.7 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+h1,h2,.grande,.anos,.assin{font-family:var(--serif);font-weight:500;margin:0}
+.pular{position:absolute;left:-999px;top:0;background:#fff;padding:.7rem 1rem;z-index:99}
+.pular:focus{left:.5rem;top:.5rem}
+.dec{position:absolute;pointer-events:none;user-select:none}
+
+/* capa */
+.capa{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;
+  padding:clamp(11rem,52vw,19rem) 14vw clamp(9rem,46vw,17rem);transition:opacity .7s ease,transform .7s ease}
+.capa.sai{opacity:0;transform:translateY(-3%)}
+.capa .topo{top:0;left:0;width:min(100%,760px)}
+.capa .base,.rodape .base{bottom:0;right:0;width:min(100%,760px)}
+.lat{top:30%;width:clamp(60px,17vw,140px)}
+.lat.e{left:-3vw}
+.lat.d{right:-3vw;transform:scaleX(-1)}
+.capa-txt{position:relative;max-width:34rem}
+.peq{font-style:italic;font-family:var(--serif);font-size:1.35rem;margin:0}
+h1{font-size:clamp(3.4rem,16vw,6.5rem);font-style:italic;line-height:1;color:var(--rosa2);margin:.2em 0 .1em}
+.anos{font-size:clamp(1.8rem,7vw,2.6rem)}
+.frase{margin:1rem auto;max-width:24rem}
+.data{font-weight:700;margin:1rem 0 1.5rem}
+.dica{font-size:.9rem;margin:.8rem 0 0}
+.js #convite{display:none}
+.js body.aberto #capa{display:none}
+.js body.aberto #convite{display:block;animation:ent .9s ease both}
+html:not(.js) #abrir,html:not(.js) .dica{display:none}
+@keyframes ent{from{opacity:0}to{opacity:1}}
+
+/* seções */
+#convite{outline:0}
+.sec{position:relative;max-width:40rem;margin:0 auto;padding:4.5rem 2rem;text-align:center}
+.sec+.sec::before{content:"";display:block;width:4rem;height:1px;background:#d9a4b3;margin:0 auto 3.5rem;position:relative;top:-1.5rem}
+h2{font-size:clamp(2.1rem,8vw,3rem);color:var(--rosa2);line-height:1.15;margin-bottom:1rem}
+.texto{max-width:30rem;margin:0 auto 1.6rem}
+.carta .texto{font-family:var(--serif);font-size:1.4rem;line-height:1.6;font-weight:500}
+.carta{padding-left:clamp(2rem,16vw,5rem);padding-right:clamp(2rem,16vw,5rem)}
+.carta .lat{top:2rem;left:-6vw;width:clamp(50px,13vw,100px);opacity:.9}
+.orn{height:18px;margin:0 auto 1.4rem;width:90px;background:radial-gradient(circle,var(--rosa) 3px,transparent 4px) center/30px 18px repeat-x}
+.assin{font-style:italic;font-size:1.8rem;color:var(--rosa2)}
+.grande{font-size:clamp(2rem,8vw,2.8rem);line-height:1.2}
+.contagem{font-weight:700;margin:1rem 0 1.5rem;min-height:1.7em}
+.cards{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1rem}
+.cards li{background:rgba(255,255,255,.55);border:1px solid #e7bfca;border-radius:1.2rem 1.2rem .4rem 1.2rem;padding:1.2rem .8rem;font-weight:700;font-size:.98rem}
+.cards svg{display:block;width:2.6rem;height:2.6rem;margin:0 auto .6rem;fill:none;stroke:var(--rosa);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3.2rem;min-width:12rem;padding:.8rem 1.9rem;margin:.4rem;border-radius:999px;border:2px solid var(--rosa);background:var(--rosa);color:#fff;font:700 1rem var(--sans);text-decoration:none;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+.btn:hover{background:var(--rosa2);border-color:var(--rosa2);transform:translateY(-2px);box-shadow:0 6px 16px rgba(143,33,69,.25)}
+.btn:active{transform:none}
+.btn:focus-visible{outline:3px solid #e8683a;outline-offset:3px}
+.btn.sec2{background:transparent;color:var(--rosa2)}
+.btn.sec2:hover{background:var(--rosa2);color:#fff}
+.aviso{min-height:1.7em;font-weight:700;color:var(--rosa2)}
+
+/* rodapé */
+.rodape{position:relative;text-align:center;padding:4.5rem 2rem clamp(10rem,46vw,17rem);overflow:hidden}
+.peq2{max-width:28rem;margin:0 auto 1rem}
+
+/* animação de entrada (somente seções) */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+.js .rv.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
