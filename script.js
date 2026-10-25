@@ -4,7 +4,7 @@
 const CONFIG = {
   dataEvento: { ano: 2026, mes: 11, dia: 22 },
   // URL pública do convite. Deixe "" para usar o endereço da página aberta.
-  siteUrl: "https://joaolucasserafim.github.io/Convite15anos/",
+  siteUrl: "http://marialuiza15.com/",
   // Preencha quando forem informados. Vazio = não aparece no site.
   horario: "12:30",
   enderecoExtenso: "",
