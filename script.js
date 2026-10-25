@@ -4,9 +4,9 @@
 const CONFIG = {
   dataEvento: { ano: 2026, mes: 11, dia: 22 },
   // URL pública do convite. Deixe "" para usar o endereço da página aberta.
-  siteUrl: "",
+  siteUrl: "https://joaolucasserafim.github.io/Convite15anos/",
   // Preencha quando forem informados. Vazio = não aparece no site.
-  horario: "",
+  horario: "12:30",
   enderecoExtenso: "",
   telefone: "5591984353223",
   mensagemWhats: "Olá, Maria Luiza! Recebi seu convite de 15 anos e gostaria de confirmar minha presença na festa do dia 22/11/2026.",
@@ -52,32 +52,6 @@ function atualizarContagem() {
 }
 atualizarContagem();
 setInterval(atualizarContagem, 60000);
-
-/* Calendário .ics (evento de dia inteiro, gerado no navegador) */
-$("ics").addEventListener("click", () => {
-  const d = CONFIG.dataEvento, p = (n) => String(n).padStart(2, "0");
-  const ini = d.ano + p(d.mes) + p(d.dia);
-  const fim = new Date(Date.UTC(d.ano, d.mes - 1, d.dia + 1)).toISOString().slice(0, 10).replace(/-/g, "");
-  const esc = (t) => t.replace(/([,;\\])/g, "\\$1");
-  const agora = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d+/, "");
-  const linhas = [
-    "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Convite Maria Luiza//PT-BR", "CALSCALE:GREGORIAN",
-    "BEGIN:VEVENT",
-    "UID:maria-luiza-15-anos-" + ini + "@convite",
-    "DTSTAMP:" + agora,
-    "DTSTART;VALUE=DATE:" + ini,
-    "DTEND;VALUE=DATE:" + fim,
-    "SUMMARY:" + esc("Aniversário de 15 anos da Maria Luiza"),
-    "DESCRIPTION:" + esc("Localização: " + CONFIG.mapsUrl),
-    "END:VEVENT", "END:VCALENDAR"
-  ];
-  const blob = new Blob([linhas.join("\r\n") + "\r\n"], { type: "text/calendar;charset=utf-8" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "convite-maria-luiza-15-anos.ics";
-  document.body.appendChild(a); a.click(); a.remove();
-  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-});
 
 /* Compartilhar: Web Share API → Clipboard API → execCommand */
 function aviso(t) { $("aviso").textContent = t; }
