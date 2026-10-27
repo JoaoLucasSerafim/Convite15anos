@@ -68,3 +68,4 @@ h2{font-size:clamp(2.1rem,8vw,3rem);color:var(--rosa2);line-height:1.15;margin-b
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .rv{opacity:1;transform:none}
 }
+.nota{max-width:26rem;margin:0 auto 1.6rem;padding:.9rem 1.2rem;background:rgba(255,255,255,.6);border:1px solid #e7bfca;border-radius:1.2rem 1.2rem .4rem 1.2rem;font-weight:700;color:var(--rosa2)}
