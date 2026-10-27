@@ -7,7 +7,7 @@ const CONFIG = {
   siteUrl: "https://marialuiza15.com/",
   // Preencha quando forem informados. Vazio = não aparece no site.
   horario: "12:30",
-  enderecoExtenso: "",
+  enderecoExtenso: "Stela Eventos, Castanhal - PA",
   telefone: "5591984353223",
   mensagemWhats: "Olá, Maria Luiza! Recebi seu convite de 15 anos e gostaria de confirmar minha presença na festa do dia 22/11/2026.",
   mapsUrl: "https://www.google.com/maps/place/1%C2%B017'31.0%22S+47%C2%B057'24.2%22W/@-1.2919455,-47.9592819,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-1.2919455!4d-47.956707?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
